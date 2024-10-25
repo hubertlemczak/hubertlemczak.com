@@ -1,0 +1,51 @@
+---
+type Props = {
+  href: string;
+  label: string;
+  openInNewTab?: boolean;
+  size?: "small";
+  class?: string;
+};
+
+const { href, label, openInNewTab, size, class: className, ...rest } = Astro.props;
+
+const target = openInNewTab ? "_blank" : "_self";
+const rel = openInNewTab ? "noopener" : "";
+---
+
+<a href={href} class=`link-btn ${size ? size : ''} ${className ? className : ''}` target={target} rel={rel} {...rest}>
+  {label}
+</a>
+
+<style>
+  .link-btn {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    width: fit-content;
+    font-size: 1.375rem;
+    background-color: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .link-btn:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  .link-btn.small {
+    font-size: 0.875rem;
+  }
+
+  @media (width > 48em) {
+    .link-btn {
+      padding: 0.75rem 2rem;
+      font-size: 1.75rem;
+    }
+
+    .link-btn.small {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+  }
+</style>

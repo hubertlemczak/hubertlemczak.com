@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
+import LinkButton from "../components/LinkButton.astro";
 ---
 
 <Layout title="Page Not Found | Hubert Lemczak" description="Page not found.">
@@ -9,7 +10,7 @@ import Layout from "../layouts/Layout.astro";
     <div class="fade-in" style="--delay: 0.3s;">
       <h1>Oh no...</h1>
       <p class="subtitle">It looks like this page has been lost 👾</p>
-      <a href="/" class="return-home">Return home</a>
+      <LinkButton href="/" label="Return home" class="return-home" />
     </div>
     <Image class="fade-in" style="--delay: 0.7s;" src="/404.svg" alt="" width="800" height="800" loading="eager" />
   </section>
@@ -40,14 +41,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .return-home {
-    display: block;
-    padding: 0.5rem 1.5rem;
-    width: fit-content;
     margin-block: 2rem;
-    font-size: 1.375rem;
-    background-color: var(--color-accent);
-    color: white;
-    text-decoration: none;
   }
 
   img {
@@ -69,8 +63,6 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .return-home {
-      padding: 0.75rem 2rem;
-      font-size: 1.75rem;
       margin-block: 5rem;
     }
   }

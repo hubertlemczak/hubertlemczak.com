@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import Hamburger from "./Hamburger.astro";
+import LinkButton from "./LinkButton.astro";
 ---
 
 <header class="fade-in">
@@ -25,7 +26,9 @@ import Hamburger from "./Hamburger.astro";
             <Icon name="github" width={24} height={24} />
           </a>
         </li>
-        <li><a href="mailto:hubertlemczak@gmail.com" class="email-btn">EMAIL</a></li>
+        <li>
+          <LinkButton href="mailto:hubertlemczak@gmail.com" label="EMAIL" size="small" />
+        </li>
       </ul>
     </div>
     <Hamburger />
@@ -94,7 +97,7 @@ import Hamburger from "./Hamburger.astro";
   }
 
   a {
-    display: inline-block;
+    display: block;
     font-size: 0.875rem;
     font-weight: 600;
     color: white;
@@ -109,17 +112,6 @@ import Hamburger from "./Hamburger.astro";
 
   .logo:hover #logo-bg {
     fill: var(--color-accent-hover);
-  }
-
-  .email-btn {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--color-accent);
-    color: white;
-    transition: background-color 0.3s ease-in-out;
-  }
-
-  .email-btn:hover {
-    background-color: var(--color-accent-hover);
   }
 
   @media (width > 48em) {

@@ -1,4 +1,5 @@
 ---
+import LinkButton from "./LinkButton.astro";
 import MarqueeWebsite from "./MarqueeWebsite.astro";
 ---
 
@@ -6,7 +7,7 @@ import MarqueeWebsite from "./MarqueeWebsite.astro";
   <div class="container footer-container fade-in-observable">
     <div class="fade-in" style="--delay: 0.1s;">
       <p>👋 Thanks for stopping by! If you like what you see let's <i>work together</i></p>
-      <a href="mailto:hubertlemczak@gmail.com" class="email-me">Email me</a>
+      <LinkButton href="mailto:hubertlemczak@gmail.com" label="Email me" class="email-me" />
     </div>
     <nav class="fade-in" style="--delay: 0.4s;">
       <div>
@@ -63,24 +64,12 @@ import MarqueeWebsite from "./MarqueeWebsite.astro";
     margin-right: 2rem;
   }
 
+  .email-me {
+    margin-top: 2rem;
+  }
+
   i {
     color: black;
-  }
-
-  .email-me {
-    display: block;
-    padding: 0.5rem 1.5rem;
-    width: fit-content;
-    margin-top: 2rem;
-    font-size: 1.375rem;
-    background-color: var(--color-accent);
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-  }
-
-  .email-me:hover {
-    background-color: var(--color-accent-hover);
   }
 
   nav {
@@ -109,11 +98,6 @@ import MarqueeWebsite from "./MarqueeWebsite.astro";
     footer {
       padding: 16rem 2rem 10rem;
       background-size: 100% 40%;
-    }
-
-    .email-me {
-      padding: 0.75rem 2rem;
-      font-size: 1.75rem;
     }
   }
 
