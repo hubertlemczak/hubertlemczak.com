@@ -1,13 +1,21 @@
 ---
 import { Icon } from "astro-icon/components";
 import Hamburger from "./Hamburger.astro";
-import { Image } from "astro:assets";
 ---
 
 <header class="fade-in">
   <nav>
     <a href="/" aria-label="Home">
-      <Image src="/logo.svg" alt="" width={48} height={48} loading="eager" />
+      <svg class="logo" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="48" id="logo-bg"></rect>
+        <path
+          d="M21.5001 16.7587C21.5001 16.7587 21.5001 16.5 23.0001 16.5C26.4546 16.5 29.5 18.5001 29.5001 22.5C29.5002 26.4999 29.5001 32.5 29.5001 33.5C29.5001 34.5 31.5001 34.5 31.5001 34.5V36.5C31.5001 36.5 27.5001 36.5 27.5001 33.5C27.5001 33.5 27.5002 25.5 27.5001 22.5C27.5 19.5 25.3514 18.5001 23.0001 18.5001C19.5 18.5 19.5001 20.5001 19.5001 20.5001L19.5 16.5L19.5001 12.5C19.5001 10.5 16.5001 10.5 16.5001 10.5V8.5C16.5001 8.5 21.5 8.5 21.5001 12.5C21.5002 16.5 21.5001 16.7587 21.5001 16.7587Z"
+          fill="white"></path>
+        <path d="M18.5 29.5L16.4998 29.5L16.5 11.5C16.5 11.5 18.5 11.5 18.5 12.5V29.5Z" fill="white"></path>
+        <path
+          d="M19.5 22.5C19.5 20.5 21.4257 19.5 23 19.5C24.5743 19.5 26.5 20.807 26.5 22.5C26.5 24.193 26.5 33.5 26.5 33.5C26.5 37.5 31.5 37.5 31.5 37.5V39.5C31.5 39.5 24.5 39.5 24.5 33.5C24.5 27.5 24.5 22.5 24.5 22.5C24.5 21.5 23 21.5 23 21.5C23 21.5 21.5 21.5 21.5 22.5V29.5H19.5C19.5 29.5 19.5 24.5001 19.5 22.5Z"
+          fill="white"></path>
+      </svg>
     </a>
     <div class="nav-menu">
       <ul>
@@ -94,10 +102,24 @@ import { Image } from "astro:assets";
     letter-spacing: 0.05rem;
   }
 
+  #logo-bg {
+    fill: var(--color-accent);
+    transition: fill 0.3s ease-in-out;
+  }
+
+  .logo:hover #logo-bg {
+    fill: var(--color-accent-hover);
+  }
+
   .email-btn {
     padding: 0.75rem 1.5rem;
     background-color: var(--color-accent);
     color: white;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .email-btn:hover {
+    background-color: var(--color-accent-hover);
   }
 
   @media (width > 48em) {
