@@ -104,7 +104,7 @@ const { title, description } = Astro.props;
   .fade-in {
     --delay: 0s;
 
-    opacity: 0;
+    opacity: 0.001;
     visibility: visible;
     -webkit-transform: translateY(-20px);
     transform: translateY(-20px);
@@ -113,7 +113,7 @@ const { title, description } = Astro.props;
 
   @keyframes fade-in {
     0% {
-      opacity: 0;
+      opacity: 0.001;
       -webkit-transform: translateY(-20px);
       transform: translateY(-20px);
     }
