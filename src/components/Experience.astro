@@ -16,7 +16,7 @@ type Props = {
 const { id, role, date, title, description, image, alt, href, openInNewTab } = Astro.props;
 ---
 
-<li class="fade-in" style=`--delay: ${0.15 * Number(id)}s;`>
+<li class="fade-in" style=`--delay: ${0.15 * Number(id) - 0.15}s;`>
   <div>
     <span>{id}</span>
     <a href={href} target={openInNewTab ? "_blank" : ""}>
